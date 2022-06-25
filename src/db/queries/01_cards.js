@@ -20,3 +20,22 @@ export const getAllCards = () => {
     });
   });
 };
+
+export const getCardsByCharacter = () => {
+  return new Promise((resolve, reject) => {
+    MongoClient.connect(url, (err, db) => {
+      if (err) throw err;
+
+      return db
+        .db("psekai")
+        .collection("cards")
+        .find({character: "Hatsune Miku"})
+        .toArray((err, result) => {
+          if (err) throw err;
+
+          db.close();
+          resolve(result);
+        });
+    });
+  });
+};

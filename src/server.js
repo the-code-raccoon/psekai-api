@@ -2,7 +2,7 @@ import express from "express";
 import expressSession from "express-session";
 import { clientPromise } from "./db/db.js";
 
-import { getAllCards } from "./db/queries/01_cards.js";
+import { getAllCards, getCardsByCharacter } from "./db/queries/01_cards.js";
 
 const app = express();
 
@@ -10,11 +10,18 @@ app.get("/", (req, res) => {
   res.send("test");
 });
 
-app.get("/cards", (req, res) => {
-  getAllCards().then((data) => {
-    console.log(data);
-    res.json({ PLS: "WORK" });
-  });
+app.get("/cards", async (req, res) => {
+  const cards = await getAllCards();
+
+  console.log(cards);
+  res.json({ PLS: "WORK" });
+});
+
+app.get("/cards2", async (req, res) => {
+  const cards = await getCardsByCharacter();
+
+  console.log(cards);
+  res.json({ PLS: "WORK2" });
 });
 
 app.use(
