@@ -1,4 +1,7 @@
 import express from "express";
+import { MongoClient } from "mongodb";
+
+import { clientPromise } from "./db/db.js";
 
 const app = express();
 
