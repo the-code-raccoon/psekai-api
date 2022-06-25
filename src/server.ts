@@ -1,7 +1,8 @@
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
-import path from "path";
+// import path from "path";
 import helmet from "helmet";
+import cors from "cors";
 
 import express, { NextFunction, Request, Response } from "express";
 import StatusCodes from "http-status-codes";
@@ -10,6 +11,9 @@ import "express-async-errors";
 import apiRouter from "./routes/api";
 import logger from "jet-logger";
 import { CustomError } from "@shared/errors";
+
+const CONNECTION_URL =
+  "mongodb+srv://raccoon:dahaMa459@cluster0.2nhfm.mongodb.net/?retryWrites=true&w=majority";
 
 // Constants
 const app = express();
@@ -22,6 +26,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors());
 
 // Show routes called in console during development
 if (process.env.NODE_ENV === "development") {
