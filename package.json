@@ -22,6 +22,7 @@
   "homepage": "https://github.com/the-code-raccoon/psekai-challenge-score-tracker-api#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "express-session": "^1.17.3",
     "mongodb": "^4.7.0"
   },
   "devDependencies": {
