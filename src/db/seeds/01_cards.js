@@ -10,16 +10,28 @@ MongoClient.connect(url, function (err, db) {
       _id: 1,
       character: "Hatsune Miku",
       title: "Legendary Songstress",
+      unit: "VIRTUAL SINGER",
+      support_group: null,
+      attribute: "cute",
+      rarity: 1,
     },
     {
       _id: 2,
       character: "Hatsune Miku",
       title: "School SEKAI",
+      unit: "VIRTUAL SINGER",
+      support_group: "Leo/need",
+      attribute: "cute",
+      rarity: 2,
     },
     {
       _id: 3,
       character: "Akiyama Mizuki",
       title: "Nightcord at 25:00",
+      unit: "Nightcord at 25:00",
+      support_group: null,
+      attribute: "cool",
+      rarity: 2,
     },
   ];
 

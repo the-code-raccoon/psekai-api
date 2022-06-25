@@ -1,4 +1,9 @@
 {
   "_id": 1,
-  "character": "Hatsune Miku"
+  "character": "Hatsune Miku",
+  "title": "Legendary Songstress",
+  "unit": "VIRTUAL SINGER",
+  "support_group": null,
+  "attribute": "cute",
+  "rarity": 1
 }
