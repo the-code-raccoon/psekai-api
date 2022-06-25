@@ -16,6 +16,11 @@ MongoClient.connect(url, function (err, db) {
       character: "Hatsune Miku",
       title: "School SEKAI",
     },
+    {
+      _id: 3,
+      character: "Akiyama Mizuki",
+      title: "Nightcord at 25:00",
+    },
   ];
 
   dbo.collection("cards").insertMany(cards, function (err, res) {
