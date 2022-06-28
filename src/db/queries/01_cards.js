@@ -21,7 +21,7 @@ export const getAllCards = () => {
   });
 };
 
-export const getCardsByCharacter = () => {
+export const getCardsByCharacter = (character) => {
   return new Promise((resolve, reject) => {
     MongoClient.connect(url, (err, db) => {
       if (err) throw err;
@@ -29,7 +29,7 @@ export const getCardsByCharacter = () => {
       return db
         .db("psekai")
         .collection("cards")
-        .find({character: "Hatsune Miku"})
+        .find({ character })
         .toArray((err, result) => {
           if (err) throw err;
 
