@@ -1,30 +1,15 @@
 import express from "express";
 import expressSession from "express-session";
-import { clientPromise } from "./db/db.js";
+import { router as cardsRouter } from "./routes/cards-router.js";
 
-import { getAllCards, getCardsByCharacter } from "./db/queries/01_cards.js";
 
 const app = express();
 
+
+app.use("/api/cards", cardsRouter);
+
 app.get("/", (req, res) => {
   res.send("test");
-});
-
-app.get("/cards", async (req, res) => {
-  const cards = await getAllCards();
-  const json = {}
-  for (const card of cards) {
-    json[card._id] = card;
-  }
-  console.log(cards);
-  res.json(json);
-});
-
-app.get("/cards2", async (req, res) => {
-  const cards = await getCardsByCharacter();
-
-  console.log(cards);
-  res.json({ PLS: "WORK2" });
 });
 
 app.use(
