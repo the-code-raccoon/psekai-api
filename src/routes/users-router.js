@@ -1,24 +1,17 @@
 import express from "express";
 
-import { getAllCards, getCardsByCharacter } from "../db/queries/01_cards.js";
+import { getUser, checkPassword } from "../db/queries/02_users.js";
 
 export const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const { character } = req.query;
-  const cards = await getCardsByCharacter(character);
-  const json = {};
-  for (const card of cards) {
-    json[card._id] = card;
-  }
-  res.json(json);
+  const {user, password} = req.body;
+  const userObj = await getAllCards({user, password});
+  res.json(userObj);
 });
 
-router.get("/all", async (req, res) => {
-  const cards = await getAllCards();
-  const json = {};
-  for (const card of cards) {
-    json[card._id] = card;
-  }
-  res.json(json);
+router.get("/:userID", async (req, res) => {
+  const { user } = req.params;
+  const userObj = await getUser(user);
+  res.json(userObj);
 });
