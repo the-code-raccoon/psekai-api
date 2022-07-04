@@ -1,10 +1,12 @@
 import express from "express";
 import expressSession from "express-session";
 import { router as cardsRouter } from "./routes/cards-router.js";
+import { router as usersRouter } from "./routes/users-router.js";
 
 const app = express();
 
 app.use("/api/cards", cardsRouter);
+app.use("/api/users", usersRouter);
 
 app.use(
   expressSession({
