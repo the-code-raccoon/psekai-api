@@ -6,12 +6,13 @@ export const router = express.Router();
 
 router.get("/", async (req, res) => {
   const { user, password } = req.body;
-  const userObj = await getAllCards({ user, password });
+  const userObj = await checkPassword({ user, password });
   res.json(userObj);
 });
 
 router.get("/:userID", async (req, res) => {
-  const { user } = req.params;
-  const userObj = await getUser(user);
+  const { userID } = req.params;
+  console.log(userID)
+  const userObj = await getUser(userID);
   res.json(userObj);
 });
