@@ -39,3 +39,22 @@ export const getCardsByCharacter = (character) => {
     });
   });
 };
+
+export const getCardByID = (id) => {
+  return new Promise((resolve, reject) => {
+    MongoClient.connect(url, (err, db) => {
+      if (err) throw err;
+
+      return db
+        .db("psekai")
+        .collection("cards")
+        .find({ "_id": id })
+        .toArray((err, result) => {
+          if (err) throw err;
+
+          db.close();
+          resolve(result);
+        });
+    });
+  });
+};
