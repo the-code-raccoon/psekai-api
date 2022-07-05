@@ -12,7 +12,6 @@ router.get("/", async (req, res) => {
 
 router.get("/:userID", async (req, res) => {
   const { userID } = req.params;
-  console.log(userID)
   const userObj = await getUser(userID);
   res.json(userObj);
 });
