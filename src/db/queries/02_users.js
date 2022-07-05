@@ -15,7 +15,6 @@ export const getUser = (user) => {
           if (err) throw err;
 
           db.close();
-          console.log(result)
           resolve(result[0]);
         });
     });
