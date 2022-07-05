@@ -7,7 +7,7 @@ MongoClient.connect(url, function (err, db) {
   const dbo = db.db("psekai");
   const cards = [
     {
-      _id: 1,
+      cardID: 1,
       character: "Hatsune Miku",
       title: "Legendary Songstress",
       unit: "VIRTUAL SINGER",
@@ -16,7 +16,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 1,
     },
     {
-      _id: 2,
+      cardID: 2,
       character: "Hatsune Miku",
       title: "School SEKAI",
       unit: "VIRTUAL SINGER",
@@ -25,7 +25,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 2,
     },
     {
-      _id: 3,
+      cardID: 3,
       character: "Kagamine Rin",
       title: "Bursting With Energy!",
       unit: "VIRTUAL SINGER",
@@ -34,7 +34,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 1,
     },
     {
-      _id: 4,
+      cardID: 4,
       character: "Kagamine Rin",
       title: "Stage SEKAI",
       unit: "VIRTUAL SINGER",
@@ -43,7 +43,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 2,
     },
     {
-      _id: 5,
+      cardID: 5,
       character: "Kagamine Len",
       title: "Bursting With Power!",
       unit: "VIRTUAL SINGER",
@@ -52,7 +52,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 1,
     },
     {
-      _id: 5,
+      cardID: 5,
       character: "Kagamine Len",
       title: "Street SEKAI",
       unit: "VIRTUAL SINGER",
@@ -61,7 +61,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 2,
     },
     {
-      _id: 6,
+      cardID: 6,
       character: "Megurine Luka",
       title: "Cool Beauty",
       unit: "VIRTUAL SINGER",
@@ -70,7 +70,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 1,
     },
     {
-      _id: 7,
+      cardID: 7,
       character: "Megurine Luka",
       title: "School SEKAI",
       unit: "VIRTUAL SINGER",
@@ -79,7 +79,7 @@ MongoClient.connect(url, function (err, db) {
       rarity: 2,
     },
     {
-      _id: 10,
+      cardID: 10,
       character: "Akiyama Mizuki",
       title: "Nightcord at 25:00",
       unit: "Nightcord at 25:00",
