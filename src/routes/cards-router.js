@@ -1,6 +1,10 @@
 import express from "express";
 
-import { getAllCards, getCardsByCharacter } from "../db/queries/01_cards.js";
+import {
+  getAllCards,
+  getCardsByCharacter,
+  getCardByID,
+} from "../db/queries/01_cards.js";
 
 export const router = express.Router();
 
@@ -21,4 +25,11 @@ router.get("/all", async (req, res) => {
     json[card._id] = card;
   }
   res.json(json);
+});
+
+router.get("/:cardID", async (req, res) => {
+  const { cardID } = req.params;
+  console.log(cardID)
+  const card = await getCardByID(cardID);
+  res.json(card);
 });
