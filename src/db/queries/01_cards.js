@@ -5,7 +5,7 @@ let url = "mongodb://localhost:27017/";
 export const getAllCards = () => {
   return new Promise((resolve, reject) => {
     MongoClient.connect(url, (err, db) => {
-      if (err) throw err;
+      if (err) throw reject(err);
 
       return db
         .db("psekai")
@@ -24,7 +24,7 @@ export const getAllCards = () => {
 export const getCardsByCharacter = (character) => {
   return new Promise((resolve, reject) => {
     MongoClient.connect(url, (err, db) => {
-      if (err) throw err;
+      if (err) throw reject(err);
 
       return db
         .db("psekai")
@@ -40,15 +40,15 @@ export const getCardsByCharacter = (character) => {
   });
 };
 
-export const getCardByID = (id) => {
+export const getCardByID = (cardID) => {
   return new Promise((resolve, reject) => {
     MongoClient.connect(url, (err, db) => {
-      if (err) throw err;
+      if (err) throw reject(err);
 
       return db
         .db("psekai")
         .collection("cards")
-        .find({ "_id": id })
+        .find({ cardID })
         .toArray((err, result) => {
           if (err) throw err;
 

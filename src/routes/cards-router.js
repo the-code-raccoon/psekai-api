@@ -29,7 +29,6 @@ router.get("/all", async (req, res) => {
 
 router.get("/:cardID", async (req, res) => {
   const { cardID } = req.params;
-  console.log(cardID)
-  const card = await getCardByID(cardID);
+  const card = await getCardByID(parseInt(cardID));
   res.json(card);
 });
